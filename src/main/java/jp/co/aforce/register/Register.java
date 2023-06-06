@@ -65,6 +65,8 @@ public class Register extends HttpServlet {
 
             if (count > 0) {
                 out.println("すでに登録されています。");
+                out.println("<br>");
+                out.println("<a href=\"http://localhost:8080/MemberInfomation/views/register.jsp\">会員登録画面へ</a>");
                 
             } else {
                 // 登録機能を持つDAOを作成し、会員を登録する

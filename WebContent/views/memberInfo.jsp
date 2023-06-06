@@ -13,8 +13,6 @@
 <body>
 	<h1>会員検索結果</h1>
 
-	<table>
-
 		<form method="post" action="../jp.co.aforce.update/update">
 			<%
 			List<Product> memberList = (List<Product>) request.getAttribute("memberList");
@@ -34,21 +32,21 @@
 			<input type="radio" name="sex" value="女"
 				<%if (member.getSex().equals("女")) {%> checked <%}%>> 女<br>
 			生年月日:
-			<select name="birth_year" required="required">
-			 <%for (int i = 1920; i <= 2020; i++) {%>
+			<select name="birth_year" >
+			 <%for (int i= 1920; i<=2020; i++) {%>
 				<option value="<%=i%>" 
 				<%if (i == member.getBirth_year()) {%>selected <%}%>><%=i%>
 				</option><%}%>
 			</select>
 				 /
-			<select>
+			<select name="birth_month">
 		     <%for (int i = 1 ; i <= 12 ; i++) {%>
 				 <option value="<%=i%>"
 				 <%if(i == member.getBirth_month()){%>selected<%}%>><%=i%>
 				 </option><%}%>
 		    </select>
 			     / 
-			<select>
+			<select name="birth_day">
 			     <%for(int i = 1 ; i <=31 ;i++){%>
 			     <option value="<%=i%>"
 			     <%if (i == member.getBirth_day()){%>selected<%}%>><%=i%>
@@ -76,9 +74,10 @@
 		}
 		%>
 		
-	</table>
+
 	
-	<a href="http://localhost:8080/MemberInfomation/views/register.jsp">会員登録画面へ</a>
+	
 </form>
+<a href="http://localhost:8080/MemberInfomation/views/register.jsp">会員登録画面へ</a>
 </body>
 </html>
