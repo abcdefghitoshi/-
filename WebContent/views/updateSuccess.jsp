@@ -8,5 +8,8 @@
 </head>
 <body>
 <p>更新が完了しました。</p>
+
+<a href="http://localhost:8080/MemberInfomation/views/register.jsp">会員登録画面へ</a>
+</form>
 </body>
 </html>

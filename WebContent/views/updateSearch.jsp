@@ -16,6 +16,6 @@
         <input type="submit" value="検索">
     </form>
     
-    
+   <a href="http://localhost:8080/MemberInfomation/views/register.jsp">会員登録画面へ</a> 
 </body>
 </html>

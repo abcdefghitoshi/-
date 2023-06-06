@@ -88,7 +88,7 @@ public class ProductDao extends DAO {
                 p.setMail_address(resultSet.getString("mail_address"));
 
                 memberList.add(p);
-            }System.out.println("Member List: " + memberList);
+            }
         } catch (Exception e) {
            
             e.printStackTrace(); // エラーメッセージを出力
@@ -98,32 +98,34 @@ public class ProductDao extends DAO {
         return memberList;
     }
 
-    public void updateMember(Product product) throws SQLException{
-        try (Connection connection = getConnection()) {
+    public int updateMember(Product product) throws Exception{
+       Connection connection = getConnection() ;
             String updateQuery = "UPDATE member_info SET last_name = ?, first_name = ?, sex = ?, "
                     + "birth_year = ?, birth_month = ?, birth_day = ?, job = ?, phone_number = ?, mail_address = ? "
                     + "WHERE member_id = ?";
             PreparedStatement upStatement = connection.prepareStatement(updateQuery);
             
  
-            upStatement.setString(1, product.getMember_id());
-            upStatement.setString(2, product.getLast_name());
-            upStatement.setString(3, product.getFirst_name());
-            upStatement.setString(4, product.getSex());
-            upStatement.setInt(5, product.getBirth_year());
-            upStatement.setInt(6, product.getBirth_month());
-            upStatement.setInt(7, product.getBirth_day());
-            upStatement.setString(8, product.getJob());
-            upStatement.setString(9, product.getPhone_number());
-            upStatement.setString(10, product.getMail_address());
+         
+            upStatement.setString(1, product.getLast_name());
+            upStatement.setString(2, product.getFirst_name());
+            upStatement.setString(3, product.getSex());
+            upStatement.setInt(4, product.getBirth_year());
+            upStatement.setInt(5, product.getBirth_month());
+            upStatement.setInt(6, product.getBirth_day());
+            upStatement.setString(7, product.getJob());
+            upStatement.setString(8, product.getPhone_number());
+            upStatement.setString(9, product.getMail_address());
+            upStatement.setString(10, product.getMember_id());
 
-            upStatement.executeUpdate();
-        } catch (Exception e) {
-			// TODO 自動生成された catch ブロック
-			e.printStackTrace();
-		}
+            int updateline=upStatement.executeUpdate();
+            
+            upStatement.close();
+            connection.close();
+    		return updateline;
+        
         }
     
-    }
-
+    
+}
     

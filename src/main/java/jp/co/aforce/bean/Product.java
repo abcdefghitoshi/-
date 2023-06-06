@@ -75,6 +75,12 @@ public void setMail_address(String mail_address) {
 	this.mail_address=mail_address;
 }
 
-
+@Override
+public String toString() {
+    return "Product [member_id=" + member_id + ", last_name=" + last_name + ", first_name=" + first_name +
+            ", sex=" + sex + ", birth_year=" + birth_year + ", birth_month=" + birth_month +
+            ", birth_day=" + birth_day + ", job=" + job + ", phone_number=" + phone_number +
+            ", mail_address=" + mail_address + "]";
+}
 
 }
