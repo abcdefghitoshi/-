@@ -68,7 +68,7 @@
 		} else {
 		%>
 		<tr>
-			<td colspan="8">該当する会員は見つかりませんでした。</td>
+			<td>該当する会員は見つかりませんでした。</td>
 		</tr>
 		<%
 		}
@@ -78,6 +78,6 @@
 	
 	
 </form>
-<a href="http://localhost:8080/MemberInfomation/views/register.jsp">会員登録画面へ</a>
+<a href="http://localhost:8080/MemberInfomation/views/menu.html#home">メインメニューへ</a>
 </body>
 </html>

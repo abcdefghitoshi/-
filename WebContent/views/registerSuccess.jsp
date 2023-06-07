@@ -10,7 +10,7 @@
 <h1>登録が完了しました。</h1>
     <p>あなたのMember IDは<%= request.getAttribute("member_ID") %>です。</p>
 
-  <a href="http://localhost:8080/MemberInfomation/views/menu.html#home">会員登録画面へ</a>  
+  <a href="http://localhost:8080/MemberInfomation/views/menu.html#home">メインメニューへ</a>  
     
 </body>
 </html>
