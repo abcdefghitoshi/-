@@ -126,6 +126,22 @@ public class ProductDao extends DAO {
         
         }
     
+    public int deleteMember(Product product) throws Exception{
+    	Connection connection= getConnection();
+    	String deleteQuery="DELETE FROM member_info WHERE member_id = ?";
+    	PreparedStatement dlStatement = connection.prepareStatement(deleteQuery);
+    	
+    	dlStatement.setString(1, product.getMember_id());
+    	 
+    	int line = dlStatement.executeUpdate();
+    	
+    	dlStatement.close();
+    	connection.close();
+    	
+    	return line;
+    	
+    }
+    
     
 }
     

@@ -21,7 +21,7 @@
 			%>
 
 			会員ID:
-			<input name="member_id" value="<%=member.getMember_id()%>"><br>
+			<input name="member_id" value="<%=member.getMember_id()%>" readonly><br>
 			姓 :
 			<input type="text" name="last_name"
 				value="<%=member.getLast_name()%>"><br> 名:<input

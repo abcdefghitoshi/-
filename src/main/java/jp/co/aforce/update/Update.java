@@ -77,7 +77,7 @@ public class Update extends HttpServlet {
 	                request.getRequestDispatcher("/views/updateSuccess.jsp").forward(request, response);
 	            } else {
 	                out.println("情報更新に失敗しました。");
-	                out.println("会員情報: " + product.getMember_id() + " " + product.getLast_name() + " " + product.getFirst_name() + " " + product.getSex() + " " + product.getBirth_year() + " " + product.getBirth_month() + " " + product.getBirth_day() + " " + product.getJob() + " " + product.getPhone_number() + " " + product.getMail_address());
+	           
 	            }
 	        } catch (Exception e) {
 	            e.printStackTrace(out);

@@ -9,7 +9,7 @@
 <body>
 <h1>会員検索</h1>
 <p>Member IDを入力してください。<p>
-    <form method="post" action="../jp.co.aforce.search/searchmember">
+    <form method="post" action="../jp.co.aforce/delete_search">
     
         <label for="member_Id">Member ID:</label>
         <input type="text" id="member_Id" name="member_Id">

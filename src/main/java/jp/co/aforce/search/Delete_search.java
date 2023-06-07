@@ -13,44 +13,46 @@ import jp.co.aforce.bean.Product;
 import jp.co.aforce.dao.ProductDao;
 
 /**
- * Servlet implementation class SearchMember
+ * Servlet implementation class Delete_search
  */
-@WebServlet("/jp.co.aforce.search/searchmember")
-public class SearchMember extends HttpServlet {
+@WebServlet("/jp.co.aforce/delete_search")
+public class Delete_search extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-
-	/**
-	 * @see HttpServlet#HttpServlet()
-	 */
-	public SearchMember() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public Delete_search() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
-	
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html; charset=UTF-8");
 		request.setCharacterEncoding("UTF-8");
 		try {
+			//memberIDを取得
 			String member_Id = request.getParameter("member_Id");
+			//サーチ機能を使う
 			ProductDao searchDAO = new ProductDao();
 			List<Product> memberList = searchDAO.searchMember(member_Id);
 
 			request.setAttribute("memberList", memberList);
-			request.getRequestDispatcher("/views/up_memberInfo.jsp").forward(request, response);
+			request.getRequestDispatcher("/views/dl_memberInfo.jsp").forward(request, response);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
+
 }

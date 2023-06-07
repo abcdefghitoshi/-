@@ -56,7 +56,11 @@
 	</form>
 
 	<form method="post" action="updateSearch.jsp">
-		<button>登録情報の変更はこちらから</button>
+		<p><button>登録情報の変更はこちらから</button><p>
+	</form>
+	
+	<form method="post" action="deleteSearch.jsp">
+		<p><button>登録情報の削除はこちらから</button><p>
 	</form>
 	</a>
 

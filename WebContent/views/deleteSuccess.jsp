@@ -7,9 +7,9 @@
 <title>Insert title here</title>
 </head>
 <body>
-<p>更新が完了しました。</p>
+<p>登録情報を削除しました。</p>
 
 <a href="http://localhost:8080/MemberInfomation/views/menu.html#home">メインメニューへ</a>
-</form>
+
 </body>
 </html>
